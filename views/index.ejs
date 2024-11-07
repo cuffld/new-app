@@ -29,7 +29,7 @@
         <% if (post.verified) {%>
 	<div class="post" data-post-id="<%= post.id %>">
 	  <div class="rating">
-          <h4><%= post.date.toLocaleDateString("en-ES") %></h4>
+          <h4><%= post.date.toLocaleDateString("en-GB") %></h4>
       <% if (post.likedBy.includes(user.id)) {%>
         <div class="post-rating post-rating-selected">
         <% }else{ %>
@@ -55,28 +55,24 @@
           <% if(user) {%>
           <script src="js/comment-form.js" type="text/javascript" defer></script>
           <script src="js/like.js" type="text/javascript" defer></script>
-          <form method="POST" >
+          <% } %>
+          <form method="POST">
             <textarea
               type="text"
 	            class="trans"
               name="com"
-              placeholder="Escribe tu opinión..."
+              placeholder="<% if(user){ %>Escribe tu opinión aqui...<% }else{ %>¡Para enviar tu opinión, es necesario iniciar sesión con Google!<% } %>"
               size="2000"
-              required
-            ></textarea>
+              <% if(user) { %> required <% }else{ %> disabled <% } %>>
+            </textarea>
             <div id="form-column">
-              <button class="btn trans" type="submit" style="background:hsl(231.2,19.5%,34.1%);" required>Enviar</button>
+              <button class="btn trans" type="submit" style="background:hsl(231.2,19.5%,34.1%);" <% if(user) { %> required <% }else{ %> disabled <% } %>>Enviar</button>
            <div id="thanks"></div>
           </div>
           </form>
-          <% } else {%>
-          <div class="info" style="color:red;background:#f9f9f9;"><p><ion-icon name="lock-closed-sharp"></ion-icon>
-                *Para enviar tu opinión anonima es necesario iniciar sesión con
-                Google*
-            <ion-icon name="lock-closed-sharp"></ion-icon></p></div>
-          <% } %>
           <div></div>
         </div>
+        <div class="blank-space"></div>
         <div class="info">
           <h2>¿Cual es el objetivo de nuestra página?</h2>
           <hr>
@@ -92,7 +88,7 @@
         <% if (post.verified) {%>
 	<div class="post" data-post-id="<%= post.id %>">
 	  <div class="rating">
-          <h4><%= post.date.toLocaleDateString("en-ES") %></h4>
+          <h4><%= post.date.toLocaleDateString("en-GB") %></h4>
       <% if (post.likedBy.includes(user.id)) {%>
         <div class="post-rating post-rating-selected">
         <% }else{ %>
