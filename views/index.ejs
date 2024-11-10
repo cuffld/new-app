@@ -57,14 +57,7 @@
           <script src="js/like.js" type="text/javascript" defer></script>
           <% } %>
           <form method="POST">
-            <textarea
-              type="text"
-	            class="trans"
-              name="com"
-              placeholder="<%_ if(user){ %>Escribe tu opinión aqui...<%_ }else{ %>¡Para enviar tu opinión, es necesario iniciar sesión con Google!<%_ } %>"
-              size="2000"
-              required>
-            </textarea>
+            <textarea type="text" class="trans" name="com" <% if(user){ %>placeholder='Escribe tu opinión aqui...') <% }else{ %> placeholder='¡Para enviar tu opinión, es necesario iniciar sesión con Google!' <% } %> size="2000" required></textarea>
             <div id="form-column">
               <button class="btn trans" type="submit" style="background:hsl(231.2,19.5%,34.1%);" <% if(user) { %> required <% }else{ %> disabled <% } %>>Enviar</button>
            <div id="thanks"></div>
