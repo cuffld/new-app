@@ -4,8 +4,8 @@
 tmp/
 
 *.tern-port
-public/style/new/
-node_modules/
+public/style/new/*
+node_modules/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -14,6 +14,6 @@ yarn-error.log*
 .eslintcache
 
 
-not_need/
+not_need/*
 .env
 .projectile

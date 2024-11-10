@@ -61,9 +61,9 @@
               type="text"
 	            class="trans"
               name="com"
-              placeholder="<% if(user){ %>Escribe tu opinión aqui...<% }else{ %>¡Para enviar tu opinión, es necesario iniciar sesión con Google!<% } %>"
+              placeholder="<%_ if(user){ _%>Escribe tu opinión aqui...<%_ }else{ _%>¡Para enviar tu opinión, es necesario iniciar sesión con Google!<%_ } _%>"
               size="2000"
-              <% if(user) { %> required <% }else{ %> disabled <% } %>>
+              required>
             </textarea>
             <div id="form-column">
               <button class="btn trans" type="submit" style="background:hsl(231.2,19.5%,34.1%);" <% if(user) { %> required <% }else{ %> disabled <% } %>>Enviar</button>
