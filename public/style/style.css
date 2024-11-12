@@ -333,6 +333,9 @@ footer{
 }
 
 @media all and (max-width:958px){  /*when 50% of screen is off, make to change grid on vertical rows*/
+   .almondale{
+       display:none;
+   }
     .content{
         display:flex;
         flex-direction:column;
